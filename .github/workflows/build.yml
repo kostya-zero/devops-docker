@@ -22,5 +22,7 @@ jobs:
       run: npm i -g bun
     - name: Install Dependencies
       run: bun i
+    - name: Generate prisma client
+      run: bun x prisma@latest generate
     - name: Build project
       run: bun run build
