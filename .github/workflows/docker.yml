@@ -17,4 +17,4 @@ jobs:
         POSTGRES_DB=${{ secrets.POSTGRES_DB }}
         EOF
     - name: Build the Docker image
-      run: docker compose up -d --build
+      run: docker compose up -d
