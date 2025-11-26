@@ -8,5 +8,13 @@ jobs:
     runs-on: self-hosted
     steps:
     - uses: actions/checkout@v4
+    - name: Generate .env
+      run: |
+        cat << EOF > .env
+        DATABASE_URL=${{ secrets.DATABASE_URL }}
+        POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+        POSTGRES_PASSWORD=${{ secretst.POSTGRES_PASSWORD }}
+        POSTRES_DB=${{ secrets.POSTGRES_DB }}
+        EOF
     - name: Build the Docker image
       run: docker compose up -d --build
